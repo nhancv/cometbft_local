@@ -1,0 +1,53 @@
+
+services:
+  node0:
+    image: cometbft/cometbft:v0.38.1
+    container_name: node0
+    volumes:
+      - ./network/node0:/root/.cometbft
+    ports:
+      - "26657:26657"
+      - "26656:26656"
+    command: node --proxy_app=kvstore
+    networks:
+      - cometbft-net
+
+  node1:
+    image: cometbft/cometbft:v0.38.1
+    container_name: node1
+    volumes:
+      - ./network/node1:/root/.cometbft
+    ports:
+      - "26667:26657"
+      - "26666:26656"
+    command: node --proxy_app=kvstore
+    networks:
+      - cometbft-net
+
+  node2:
+    image: cometbft/cometbft:v0.38.1
+    container_name: node2
+    volumes:
+      - ./network/node2:/root/.cometbft
+    ports:
+      - "26677:26657"
+      - "26676:26656"
+    command: node --proxy_app=kvstore
+    networks:
+      - cometbft-net
+
+  node3:
+    image: cometbft/cometbft:v0.38.1
+    container_name: node3
+    volumes:
+      - ./network/node3:/root/.cometbft
+    ports:
+      - "26687:26657"
+      - "26686:26656"
+    command: node --proxy_app=kvstore
+    networks:
+      - cometbft-net
+
+networks:
+  cometbft-net:
+    driver: bridge
