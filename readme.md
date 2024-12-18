@@ -1,6 +1,10 @@
-# CometBFT
+# CometBFT Local
+
+Run a CometBFT local cluster on Docker 
 
 ## Structure
+
+```
 network/
 ├── node0/
 │   ├── config/
@@ -15,6 +19,7 @@ network/
 │   ├── config/
 │   ├── data/
 docker-compose.yml
+```
 
 
 ## Install CometBFT
@@ -61,5 +66,5 @@ docker-compose down
 {"jsonrpc":"2.0","id":-1,"result":{"response":{"code":0,"log":"exists","info":"","index":"0","key":"YWJjZA==","value":"MTEx","proofOps":null,"height":"377","codespace":""}}}
 ```
 
-	+ Decode base64 format of `MTEx` will get `111`
+=> Decode base64 format of `MTEx` will get `111`
 
